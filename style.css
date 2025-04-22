@@ -3,56 +3,56 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
   
-  body {
+body {
     font-family: 'Inter', sans-serif;
     background-color: #f4f4f4;
     color: #333;
-  }
+}
   
-  /* Stili per il header */
-  header {
+/* Stili per il header */
+header {
     background-color: #1a1a1a;
     padding: 20px 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
+}
   
-  .navbar {
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-  }
+}
   
-  .navbar .logo {
+.navbar .logo {
     font-size: 24px;
     font-weight: 800;
     color: white;
-  }
+}
   
-  .nav-links {
+.nav-links {
     list-style: none;
     display: flex;
-  }
+}
   
-  .nav-links li {
+.nav-links li {
     margin-left: 20px;
-  }
+}
   
-  .nav-links a {
+.nav-links a {
     text-decoration: none;
     color: white;
     font-weight: 600;
     transition: color 0.3s;
-  }
+}
   
-  .nav-links a:hover {
+.nav-links a:hover {
     color: #f39c12;
-  }
+}
   
-  /* Hero section */
-  .hero {
+/* Hero section */
+.hero {
     background-image: url('img/hero-bg.jpg');
     background-size: cover;
     background-position: center;
@@ -62,19 +62,19 @@
     align-items: center;
     color: white;
     text-align: center;
-  }
+}
   
-  .hero h1 {
+.hero h1 {
     font-size: 48px;
     font-weight: 800;
-  }
+}
   
-  .hero p {
+.hero p {
     font-size: 20px;
     margin-top: 20px;
-  }
+}
   
-  .cta-button {
+.cta-button {
     background-color: #f39c12;
     padding: 10px 20px;
     border-radius: 5px;
@@ -83,138 +83,147 @@
     font-weight: 600;
     margin-top: 20px;
     transition: background-color 0.3s;
-  }
+}
   
-  .cta-button:hover {
+.cta-button:hover {
     background-color: #e67e22;
-  }
+}
   
-  /* Stili per le sezioni */
-  .section {
+/* Stili per le sezioni */
+.section {
     padding: 60px 20px;
     background-color: #fff;
-  }
+}
   
-  .container {
+.container {
     max-width: 1200px;
     margin: 0 auto;
-  }
+}
   
-  h2 {
+h2 {
     font-size: 32px;
     font-weight: 800;
     color: #333;
     margin-bottom: 20px;
     text-align: center;
-  }
+}
   
-  /* Contenuto e immagine nella sezione */
-  .content-box {
+/* Contenitore per immagini e testo nella sezione */
+.content-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 30px;
-  }
+    flex-wrap: wrap; /* Permette alle immagini e al testo di adattarsi su schermi piccoli */
+}
   
-  .image {
+/* Immagini a sinistra */
+.image {
     flex: 1;
     margin-right: 20px;
-  }
-  
-  .image img {
-    width: 300px; /* Imposta una larghezza fissa */
-    height: 200px; /* Imposta un'altezza fissa */
-    object-fit: cover; /* Mantiene la proporzione senza distorcere l'immagine */
+    max-width: 100%;
+    height: auto; /* Le immagini si adatteranno alle dimensioni del contenitore */
+}
+
+.image img {
+    width: 100%; /* Le immagini si adatteranno al contenitore */
+    max-width: 400px; /* Imposta una larghezza massima */
+    height: auto;
+    object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .text-box {
-    flex: 2;
+}
+
+/* Testo a destra */
+.text-box {
+    flex: 1;
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .text-box p {
+    max-width: 45%; /* Dà più spazio al testo */
+}
+
+.text-box p {
     font-size: 18px;
     line-height: 1.6;
     color: #555;
-  }
-  
-  /* Slider immagini per la sezione Conseguenze */
-  .image-slider {
+}
+
+/* Slider immagini per la sezione Conseguenze */
+.image-slider {
     width: 100%;
     overflow: hidden;
     position: relative;
-  }
-  
-  .slider-wrapper {
-    width: 100%;
-    position: relative;
+}
+
+.slider-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
-  }
-  
-  .slider {
+    overflow: hidden; /* Nasconde le immagini che fuoriescono dal contenitore */
+}
+
+.slider {
     display: flex;
     transition: transform 1s ease;
-  }
-  
-  .slider img {
-    width: 300px; /* Larghezza fissa per le immagini nello slider */
-    height: 200px; /* Altezza fissa per le immagini nello slider */
-    object-fit: cover; /* Mantiene la proporzione senza distorcere l'immagine */
+}
+
+.slider img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
     border-radius: 15px;
     margin-right: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Media queries per mobile */
-  @media (max-width: 768px) {
+}
+
+/* Media queries per mobile */
+@media (max-width: 768px) {
     .navbar {
-      flex-direction: column;
-      align-items: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
     }
   
     .nav-links {
-      margin-top: 20px;
-      display: block;
+        margin-top: 20px;
+        display: block;
     }
   
     .nav-links li {
-      margin: 10px 0;
+        margin: 10px 0;
     }
   
     .hero h1 {
-      font-size: 36px;
+        font-size: 36px;
     }
   
     .hero p {
-      font-size: 18px;
+        font-size: 18px;
     }
   
     .cta-button {
-      font-size: 16px;
+        font-size: 16px;
     }
   
     .content-box {
-      flex-direction: column;
+        flex-direction: column;
+        align-items: center;
     }
   
     .image {
-      margin-right: 0;
-      margin-bottom: 20px;
+        margin-right: 0;
+        margin-bottom: 20px;
+        max-width: 100%;
     }
   
     .text-box {
-      padding: 20px;
+        padding: 20px;
+        max-width: 100%;
     }
   
     .slider img {
-      margin-right: 10px;
+        margin-right: 10px;
+        max-width: 100%;
     }
-  }
-  
+}
